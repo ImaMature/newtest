@@ -28,6 +28,97 @@ public class Process {
 		this.p_date = p_date;
 		this.p_finaldate = p_finaldate;
 	}
+
+
+	public int getP_num() {
+		return p_num;
+	}
+
+
+	public void setP_num(int p_num) {
+		this.p_num = p_num;
+	}
+
+
+	public String getP_ready() {
+		return p_ready;
+	}
+
+
+	public void setP_ready(String p_ready) {
+		this.p_ready = p_ready;
+	}
+
+
+	public String getP_print() {
+		return p_print;
+	}
+
+
+	public void setP_print(String p_print) {
+		this.p_print = p_print;
+	}
+
+
+	public String getP_coating() {
+		return p_coating;
+	}
+
+
+	public void setP_coating(String p_coating) {
+		this.p_coating = p_coating;
+	}
+
+
+	public String getP_paper() {
+		return p_paper;
+	}
+
+
+	public void setP_paper(String p_paper) {
+		this.p_paper = p_paper;
+	}
+
+
+	public String getP_attach() {
+		return p_attach;
+	}
+
+
+	public void setP_attach(String p_attach) {
+		this.p_attach = p_attach;
+	}
+
+
+	public String getP_packaging() {
+		return p_packaging;
+	}
+
+
+	public void setP_packaging(String p_packaging) {
+		this.p_packaging = p_packaging;
+	}
+
+
+	public String getP_date() {
+		return p_date;
+	}
+
+
+	public void setP_date(String p_date) {
+		this.p_date = p_date;
+	}
+
+
+	public String getP_finaldate() {
+		return p_finaldate;
+	}
+
+
+	public void setP_finaldate(String p_finaldate) {
+		this.p_finaldate = p_finaldate;
+	}
+	
 	
 	
 	
