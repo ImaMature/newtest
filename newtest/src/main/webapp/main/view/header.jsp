@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-	<link rel="stylesheet" href="./css/main.css">
+	<link rel="stylesheet" href="/newtest/main/css/main.css">
 </head>
 <body>
 	<div id="headerbg">

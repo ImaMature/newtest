@@ -9,7 +9,7 @@
 	
 </style>
 </head>
-<body style="border:green 1px soild;">
+<body>
 	<%@include file="view/header.jsp" %>
 	<%@include file="view/nav.jsp" %>
 	<%@include file="view/content.jsp" %>

@@ -9,11 +9,11 @@
 <body>
 	<div class="navdiv">
 		<ul class="navlist">
-			<li>제품조회</li>
-			<li>작업지시서조회</li>
-			<li>작업공정등록</li>
-			<li>작업공정조회</li>
-			<li>홈으로</li>
+			<li><a>제품조회</a></li>
+			<li><a>작업지시서조회</a></li>
+			<li><a href="./view/process/processreg.jsp">작업공정등록</a></li>
+			<li><a>작업공정조회</a></li>
+			<li><a>홈으로</a></li>
 		</ul>
 	</div>
 </body>
