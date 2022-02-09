@@ -1,3 +1,4 @@
+<%@page import="dao.ProcessDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -7,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<%int lastP_num = ProcessDao.getProcessDao().selectlast(); %>
 	<%@include file="../header.jsp" %>
 	<%@include file="../nav.jsp" %>
 	<div class="processregDiv" >
@@ -14,7 +16,11 @@
 		<form action="../../controller/ProcessRegController.jsp" method="post">
 			<div class="processregcontainer">
 				<div>
-					<span class="processSpan">작업지시번호</span><input type="text" disabled><span>예)20190001</span>
+					<%if (lastP_num ==0) {%>
+					<span class="processSpan">작업지시번호</span><input type="text" name="pnum" value=""><span>예)20190001</span>
+					<%}else{ %>
+					<span class="processSpan">작업지시번호</span><input type="text" name="pnum" value="<%=lastP_num+1%>"><span>예)20190001</span>
+					<%} %>
 				</div>
 				<div class="containerOpt">
 					<span class="processSpan">재료준비</span> <input type="radio" name = "p_Ready" value="완료">완료 <input type="radio" name = "p_Ready" value="작업중">작업중 
@@ -35,10 +41,10 @@
 					<span class="processSpan">포장공정</span> <input type="radio" name = "p_Package" value="완료">완료 <input type="radio" name = "p_Package" value="작업중">작업중 
 				</div>
 				<div>
-					<span class="processSpan">최종작업일자</span><input type="text" name="p_date" maxlength="8"><span>예)20190101</span>
+					<span class="processSpan">최종작업일자</span><input type="text" name="p_finaldate" maxlength="8"><span>예)20190101</span>
 				</div>
 				<div>
-					<span class="processSpan">최종작업시간</span><input type="text" name="p_finaldate"><span>예)1300</span>
+					<span class="processSpan">최종작업시간</span><input type="text" name="p_finaltime"><span>예)1300</span>
 				</div>
 				<div>
 					<button type="submit">공정등록</button>

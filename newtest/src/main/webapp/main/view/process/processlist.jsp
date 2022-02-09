@@ -12,6 +12,7 @@
 <body>
 	<% 
 		ArrayList<Process> processes = ProcessDao.getProcessDao().processList(); 
+		
 	%>
 	<%@include file="../header.jsp" %>
 	<%@include file="../nav.jsp" %>
@@ -27,15 +28,46 @@
 		    	<tbody>
 		    	<% for(Process temp: processes) {%>
 			        <tr>
-			            <td><%=temp.getP_num() %></td>
-			            <td><%=temp.getP_ready() %></td>
-			            <td><%=temp.getP_print() %></td>
-			            <td><%=temp.getP_coating() %></td>
-			            <td><%=temp.getP_paper() %></td>
-			            <td><%=temp.getP_attach() %></td>
-			            <td><%=temp.getP_packaging() %></td>
-			            <td><%=temp.getP_finaldate() %></td>
-			            <td><%=temp.getP_date() %></td>
+			            <td><%=temp.getP_num()%></td>
+			            <%if(temp.getP_ready().equals("작업중")){%>
+			           		<td>-</td>
+			            <%}else{%>
+			            	<td>완료
+			            <%} %>
+			            <%if(temp.getP_print().equals("작업중")){%>
+			           		<td>-</td>
+			            <%}else{%>
+			            	<td>완료
+			            <%} %>
+			             <%if(temp.getP_coating().equals("작업중")){%>
+			           		<td>-</td>
+			            <%}else{%>
+			            	<td>완료
+			            <%} %>
+			             <%if(temp.getP_paper().equals("작업중")){%>
+			           		<td>-</td>
+			            <%}else{%>
+			            	<td>완료
+			            <%} %>
+			            <%if(temp.getP_attach().equals("작업중")){%>
+			           		<td>-</td>
+			            <%}else{%>
+			            	<td>완료
+			            <%} %>
+			            <%if(temp.getP_packaging().equals("작업중")){%>
+			           		<td>-</td>
+			            <%}else{%>
+			            	<td>완료
+			            <%} %>
+			            <%
+			            StringBuffer buffer2 = new StringBuffer(temp.getP_finaldate());
+			            buffer2.insert(4, "-");
+			            buffer2.insert(7,"-");
+			            StringBuffer buffer = new StringBuffer(temp.getP_finaltime());
+			            buffer.insert(2, ":");
+			            %>
+			            <td><%=buffer2%></td>
+			            <td><%=buffer %></td>
 			        </tr>
 		        <%} %>
 			    </tbody>
