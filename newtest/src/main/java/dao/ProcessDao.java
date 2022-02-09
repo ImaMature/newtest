@@ -29,7 +29,7 @@ public class ProcessDao {
 	
 	
 	public boolean selectFirst() {
-		String sql = "select count(*) from process";
+		String sql = "select * from process";
 		try {
 			ps = conn.prepareStatement(sql);
 			rs = ps.executeQuery();
@@ -37,11 +37,25 @@ public class ProcessDao {
 				return true;
 			}
 		}catch (Exception e) {
-			System.out.println(e);
+			System.out.println(e.getMessage());
 		}
 		return false;
 	}
 	
+	public int selectlast() {
+		String sql ="SELECT p_num FROM process ORDER BY p_num DESC LIMIT 1";
+		try {
+			ps= conn.prepareStatement(sql);
+			rs=ps.executeQuery();
+			if(rs.next()) {
+				return rs.getInt(1);
+			}
+		}catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return 0;
+		
+	}
 	public boolean ProcessReg(Process process) {
 		String sql = "insert into process (p_num, p_ready, p_print, p_coating, p_paper, p_attach, p_packaging, p_date, p_finaldate) values(?,?,?,?,?,?,?,?,?)";
 		try {
