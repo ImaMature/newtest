@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+/*  *{border: 1px green solid;}  */
+
+.title{
+	text-align: center;
+	margin:0px 0px 0px 0px;
+}
+
+#headerbg{
+	background-color: #eeeeee;
+	padding: 10px
+}
+
+
+.navdiv{
+	background-color: blue;
+}
+.navdiv ul{
+	margin: 0;
+	padding: 5px 5px 5px 25px;
+}
+.navlist li{
+	color:white;
+	list-style: none;
+	display:inline-block;
+	margin: 0 20px 0 0;
+}	
+
+.contentDiv{
+	padding-bottom:200px;
+}
+.contentTitle{
+	text-align:center;
+	margin-top:8px;
+	margin-bottom:5px; 
+}
+.firstP{
+	margin-top:8px;
+}
+
+.footer{
+	text-align: center;
+	background-color: #eeeeee;
+	padding: 15px
+}
