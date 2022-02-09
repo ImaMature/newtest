@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import dto.Process;
 
@@ -21,6 +22,7 @@ public class ProcessDao {
 			System.out.println("db연동 실패");
 		}
 	}
+	
 	Process process= new Process();
 	public static ProcessDao processDao = new ProcessDao();
 	public static ProcessDao getProcessDao() {
@@ -28,20 +30,7 @@ public class ProcessDao {
 	}
 	
 	
-	public boolean selectFirst() {
-		String sql = "select * from process";
-		try {
-			ps = conn.prepareStatement(sql);
-			rs = ps.executeQuery();
-			if(rs.next()) {
-				return true;
-			}
-		}catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
-		return false;
-	}
-	
+	//마지막 레코드 빼오기
 	public int selectlast() {
 		String sql ="SELECT p_num FROM process ORDER BY p_num DESC LIMIT 1";
 		try {
@@ -56,6 +45,7 @@ public class ProcessDao {
 		return 0;
 		
 	}
+	//등록하기
 	public boolean ProcessReg(Process process) {
 		String sql = "insert into process (p_num, p_ready, p_print, p_coating, p_paper, p_attach, p_packaging, p_date, p_finaldate) values(?,?,?,?,?,?,?,?,?)";
 		try {
@@ -77,10 +67,31 @@ public class ProcessDao {
 		}
 		return false;
 	}
-	
-	/*
-	 * public boolean selectProcess(int p_num) { String sql = "s"
-	 * 
-	 * }
-	 */
+	public ArrayList<Process> processList(){
+		ArrayList<Process> process = new ArrayList<>();
+		String sql = "select * from process order by p_num asc";
+		try {
+			ps = conn.prepareStatement(sql);
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				Process proc = new Process(
+						rs.getInt(1),
+						rs.getString(2),
+						rs.getString(3),
+						rs.getString(4),
+						rs.getString(5),
+						rs.getString(6),
+						rs.getString(7),
+						rs.getString(8),
+						rs.getString(9));
+				process.add(proc);
+			}
+			return process;
+		}catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+		return null;
+		
+	}
 }

@@ -17,12 +17,15 @@ String p_Attach = request.getParameter("p_Attach");
 String p_Package = request.getParameter("p_Package");
 String p_date = request.getParameter("p_date");
 String p_finaldate = request.getParameter("p_finaldate");
+
 if(p_date.length() != 8){
 		out.print("<script>alert('[20190101]의 형태로 8자의 숫자를 입력해주세요.');</script>");
 		response.sendRedirect("../view/process/processreg.jsp"); 
+		
 }else if(p_finaldate.length() != 4){
 		out.print("<script>alert('[1130]의 형태로 4자의 숫자를 입력해주세요.');</script>");
 		response.sendRedirect("../view/process/processreg.jsp"); 
+		
 }else{
 	p_date = p_date.replaceAll("<(/)?([a-zA-Z가-힇]*)(\\s[a-zA-Z가-힇]*=[^>]*)?(\\s)*(/)?", "");
 	p_finaldate = p_finaldate.replaceAll("<(/)?([a-zA-Z가-힇]*)(\\s[a-zA-Z가-힇]*=[^>]*)?(\\s)*(/)?", "");
