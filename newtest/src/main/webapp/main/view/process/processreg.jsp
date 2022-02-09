@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body style="border:green 1px soild;">
+<body>
 	<%@include file="../header.jsp" %>
 	<%@include file="../nav.jsp" %>
 	<div class="processregDiv" >
@@ -35,7 +35,7 @@
 					<span class="processSpan">포장공정</span> <input type="radio" name = "p_Package" value="완료">완료 <input type="radio" name = "p_Package" value="작업중">작업중 
 				</div>
 				<div>
-					<span class="processSpan">최종작업일자</span><input type="text" name="p_date"><span>예)20190101</span>
+					<span class="processSpan">최종작업일자</span><input type="text" name="p_date" maxlength="8"><span>예)20190101</span>
 				</div>
 				<div>
 					<span class="processSpan">최종작업시간</span><input type="text" name="p_finaldate"><span>예)1300</span>
