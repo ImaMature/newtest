@@ -14,9 +14,8 @@ public class ProcessDao {
 	
 	public ProcessDao() {
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			conn=DriverManager.getConnection("jdbc:mysql://localhost:3307/newtest?serverTimezone=UTC" , "root","1234");
-			System.out.println("db연동 성공");
+	        Class.forName("com.mysql.cj.jdbc.Driver");
+	        conn = DriverManager.getConnection("jdbc:mysql://localhost:3307/newtest?serverTimezone=UTC", "root", "1234");
 		}catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("db연동 실패");
